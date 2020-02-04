@@ -16,4 +16,8 @@ echo ""
 read -p "Is this all correct? (y/n) : " -n 1 -r
 echo ""
 
-echo "Download Dynatrace OneAgent from Cluster..."
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	echo "Download Dynatrace OneAgent from Cluster..."
+else
+    exit 1
+fi
