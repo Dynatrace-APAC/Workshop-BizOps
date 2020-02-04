@@ -33,6 +33,9 @@ deployOneAgent()
 			wget  -O Dynatrace-OneAgent-Linux.sh --header="Authorization: Api-Token "$PAAS_TOKEN "https://"$TENANTID".live.dynatrace.com/e/"$ENVIRONMENTID"/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default"
 			;;
 	esac
+	
+	echo "Installing OneAgent.."
+	sudo /bin/sh Dynatrace-OneAgent-Linux.sh APP_LOG_CONTENT_ACCESS=1 INFRA_ONLY=0
 }
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
