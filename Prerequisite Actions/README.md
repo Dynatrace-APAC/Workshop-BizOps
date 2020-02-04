@@ -80,8 +80,6 @@ Is this all correct? (y/n) : y
     "dynatracePaaSToken": "xxxxxx"
 }
 The credentials file can be found here: ./creds.json
-
-
 ```
 
 
