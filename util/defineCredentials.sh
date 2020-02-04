@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 YLW='\033[1;33m'
 NC='\033[0m'
 
@@ -11,10 +12,7 @@ read -p "Dynatrace Tenant ID (ex. https://<TENANT_ID>.live.dynatrace.com or http
 read -p "Dynatrace Environment ID (Dynatrace Managed Only - https://<TENANT_ID>.dynatrace-managed.com/e/<ENVIRONMENT_ID>): " DTENV
 read -p "Dynatrace API Token: " DTAPI
 read -p "Dynatrace PaaS Token: " DTPAAS
-#read -p "GitHub User Name: " GITU 
-#read -p "GitHub Personal Access Token: " GITAT
-#read -p "GitHub User Email: " GITE
-#read -p "GitHub Organization: " GITO
+
 echo ""
 
 
@@ -24,10 +22,7 @@ echo "Dynatrace Tenant ID: $DTTEN"
 echo "Dynatrace Environment ID: $DTENV"
 echo "Dynatrace API Token: $DTAPI"
 echo "Dynatrace PaaS Token: $DTPAAS"
-#echo "GitHub User Name: $GITU"
-#echo "GitHub Personal Access Token: $GITAT"
-#echo "GitHub User Email: $GITE"
-#echo "GitHub Organization: $GITO" 
+
 read -p "Is this all correct? (y/n) : " -n 1 -r
 echo ""
 
@@ -38,10 +33,7 @@ then
       sed 's~DYNATRACE_ENVIRONMENT_ID~'"$DTENV"'~' | \
       sed 's~DYNATRACE_API_TOKEN~'"$DTAPI"'~' | \
       sed 's~DYNATRACE_PAAS_TOKEN~'"$DTPAAS"'~' >> $CREDS
-      #sed 's~GITHUB_USER_NAME_PLACEHOLDER~'"$GITU"'~' | \
-      #sed 's~PERSONAL_ACCESS_TOKEN_PLACEHOLDER~'"$GITAT"'~' | \
-      #sed 's~GITHUB_USER_EMAIL_PLACEHOLDER~'"$GITE"'~' | \
-      #sed 's~GITHUB_ORG_PLACEHOLDER~'"$GITO"'~' >> $CREDS
+
 fi
 
 cat $CREDS
