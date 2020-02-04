@@ -18,7 +18,7 @@ The following are only required to create a demo application we can use for this
 Order of Hands on Sessions:
 
 1) Hands On - Basic Funnel
-2) Hands On - Session Properties
+2) Hands On - Session Properties - Part 1
 3) Hands On - Session Properties - Part 2
 4) Hands On - Conversion Rates
 5) Hands On - Business Dashboard
