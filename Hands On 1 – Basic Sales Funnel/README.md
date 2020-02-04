@@ -35,3 +35,4 @@ When you are finished your dashboard should look something like this:
 ![Dashboard Basic Funnel](/img/usql-basic-funnel.PNG)
 
 
+:arrow_up_small: [Back to overview](/README.md)
