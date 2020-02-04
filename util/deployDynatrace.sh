@@ -53,8 +53,9 @@ deployApplicationConfig()
 	
 	## Create Application
 	echo "Deploying Application Config..."
-	curl -X POST "https://"$TENANTID".live.dynatrace.com/api/config/v1/applications/web" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$API_TOKEN -H "Content-Type: application/json; charset=utf-8" -d json/application.json
-	
+		
+	export APPLICATION_ID=$(curl -sX POST "https://"$TENANTID".live.dynatrace.com/api/config/v1/applications/web" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$API_TOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/application.json | jq -r '.id')
+
 	##curl http://169.254.169.254/latest/meta-data/public-hostname
 	##ec2-xxx-xxx-xxx-xxx.ap-southeast-2.compute.amazonaws.com
 

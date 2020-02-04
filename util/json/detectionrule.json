@@ -1,0 +1,8 @@
+{
+  "applicationIdentifier": "APPLICATION_ID",
+  "filterConfig": {
+    "pattern": "PATTERN",
+    "applicationMatchType": "CONTAINS",
+    "applicationMatchTarget": "DOMAIN"
+  }
+}
