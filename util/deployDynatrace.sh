@@ -13,7 +13,7 @@ echo "TENANTID = $TENANTID"
 echo "ENVIRONMENTID (Dynatrace Managed) = $ENVIRONMENTID"
 
 echo ""
-read -p "Is this all correct? (y/n) : " -n 1 -r
+#read -p "Is this all correct? (y/n) : " -n 1 -r
 echo ""
 
 
