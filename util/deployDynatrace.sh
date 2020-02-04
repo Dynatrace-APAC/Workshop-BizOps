@@ -46,7 +46,10 @@ deployOneAgent()
 deployApplicationConfig()
 {
 	## Create Application
+	
+	## Create Detection Rule
 
+	## Create Dashboards?
 }
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
