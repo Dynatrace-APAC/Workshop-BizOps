@@ -37,6 +37,7 @@ deployOneAgent()
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo "Download Dynatrace OneAgent from Cluster..."
+	deployOneAgent()
 else
     exit 1
 fi
