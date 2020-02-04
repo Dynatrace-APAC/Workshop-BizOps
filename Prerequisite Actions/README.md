@@ -45,6 +45,44 @@ Receiving objects: 100% (108/108), 5.78 MiB | 4.10 MiB/s, done.
 Resolving deltas: 100% (19/19), done.
 
 ```
+Change directory to the untils directory
+```bash
+$  cd Workshop-BizOps/util
+```
+
+Execute defineCredentials.sh and enter your:
+Dynatrace Tenant ID
+Dynatrace Environment ID (Leave Blank if using Dynatrace SaaS)
+Dynatrace API Token
+Dynatrace PaaS Token
+
+Press "y" to confirm your credentials are correct, if you make a mistake simply run defineCredentials.sh again
+
+```bash
+$  ./defineCredentials.sh
+Please enter the credentials as requested below:
+Dynatrace Tenant ID (ex. https://<TENANT_ID>.live.dynatrace.com or https://<TENANT_ID>.dynatrace-managed.com): xxx
+Dynatrace Environment ID (Dynatrace Managed Only - https://<TENANT_ID>.dynatrace-managed.com/e/<ENVIRONMENT_ID>):
+Dynatrace API Token: xxxxxx
+Dynatrace PaaS Token: xxxxxx
+
+
+Please confirm all are correct:
+Dynatrace Tenant ID: xxx
+Dynatrace Environment ID:
+Dynatrace API Token: xxxxxx
+Dynatrace PaaS Token: xxxxxx
+Is this all correct? (y/n) : y
+{
+    "dynatraceTenantID": "xxx",
+    "dynatraceEnvironmentID": "",
+    "dynatraceApiToken": "xxxxxx",
+    "dynatracePaaSToken": "xxxxxx"
+}
+The credentials file can be found here: ./creds.json
+
+
+```
 
 
 ---
