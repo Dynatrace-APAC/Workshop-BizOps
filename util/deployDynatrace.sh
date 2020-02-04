@@ -46,6 +46,7 @@ deployOneAgent()
 deployApplicationConfig()
 {
 	## Create Application
+	echo "Deploying Application Config..."
 	
 	## Create Detection Rule
 
