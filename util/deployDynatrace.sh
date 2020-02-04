@@ -34,13 +34,25 @@ deployOneAgent()
 			;;
 	esac
 	
-	echo "Installing OneAgent.."
+	echo "Installing Dynatrace OneAgent.."
 	sudo /bin/sh Dynatrace-OneAgent-Linux.sh APP_LOG_CONTENT_ACCESS=1 INFRA_ONLY=0
+	echo "Restarting easyTravel..."
+	cd ~
+	./restart_easyTravel.sh
+	cd Workshop-BizOps/util
+	
+}
+
+deployApplicationConfig()
+{
+	## Create Application
+
 }
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo "Download Dynatrace OneAgent from Cluster..."
 	deployOneAgent
+	deployApplicationConfig
 else
     exit 1
 fi
