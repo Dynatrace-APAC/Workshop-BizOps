@@ -6,6 +6,8 @@
 #export TENANTID=$(cat creds.json | jq -r '.dynatraceTenantID')
 #export ENVIRONMENTID=$(cat creds.json | jq -r '.dynatraceEnvironmentID')
 
+export TENANTID=$TENANTID
+
 echo "Deploying Dynatrace Oneagent using the following credentials: "
 echo "API_TOKEN = $API_TOKEN"
 echo "PAAS_TOKEN = $PAAS_TOKEN"
@@ -86,10 +88,10 @@ deployApplicationConfig()
 	## Create Dashboards?
 }
 
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-	echo "Download Dynatrace OneAgent from Cluster..."
-	deployOneAgent
-	deployApplicationConfig
-else
-    exit 1
-fi
+#if [[ $REPLY =~ ^[Yy]$ ]]; then
+echo "Download Dynatrace OneAgent from Cluster..."
+deployOneAgent
+deployApplicationConfig
+#else
+#    exit 1
+#fi
