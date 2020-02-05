@@ -10,7 +10,7 @@ Select **Instances** > **Launch Instance**
 
 Search the **Community AMIs** for "Dynatrace Bizops Workshop"
 
-![Deploy](/assets/pre-publicami.png)
+![Deploy](/img/pre-publicami.png)
 
 Click **Select** to start in deployment wizard.
 
@@ -43,7 +43,7 @@ cd util
 ```
 Replace the values with the values you collected from your Dynatrace environment.
 
-![AWS Userdata](/assets/aws_userdata.PNG)
+![AWS Userdata](/img/aws_userdata.PNG)
 
 Step 4: Add Storage
 Accept the defaults
@@ -54,7 +54,7 @@ Accept the defaults
 Step 6: Configure Security Group
 Ensure the security group includes **SSH** and **HTTP** ports
 
-![Deploy](/assets/pre-securitygroup.png)
+![Deploy](/img/pre-securitygroup.png)
 
 Step 7: Review Instance Launch
 Create a new key pair or use an existing one. **Please note: you may need the PEM key to access the instance via SSH.**
