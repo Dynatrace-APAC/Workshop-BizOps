@@ -129,6 +129,6 @@ Is this all correct? (y/n) : y
 The credentials file can be found here: ./creds.json
 ```
 
-Execute deployDynatrace.sh
+Execute /manualDeployDynatrace.sh 
 ---
 :arrow_up_small: [Back to overview](/README.md)
