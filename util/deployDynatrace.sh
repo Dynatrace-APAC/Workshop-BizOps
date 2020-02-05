@@ -41,7 +41,7 @@ deployOneAgent()
 	
 	echo "Restarting easyTravel..."
 	
-	/home/ubuntu/./restart_easyTravel.sh
+	#/home/ubuntu/./restart_easyTravel.sh
 	
 	cd Workshop-BizOps/util
 	echo "easyTravel restarted."
