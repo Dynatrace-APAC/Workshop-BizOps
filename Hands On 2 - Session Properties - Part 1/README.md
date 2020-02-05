@@ -13,7 +13,7 @@ In this lab, we will create a session properties to expose business data to Dyna
    * Data Type: **String**  
    * Display Name:  **Membership Status**  
    * Key:  **membershipstatus**  
-   * CSS Selector:  **#loginForm\\:j_idt43**  
+   * CSS Selector:  **#loginForm\:j_idt42**  
    * Store as user action property: **false**  
    * Store as session property: **true**  
    * Apply cleanup rule: **true**  
