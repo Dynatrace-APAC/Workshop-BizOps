@@ -40,7 +40,7 @@
   },
   "monitoringSettings": {
     "fetchRequests": false,
-    "xmlHttpRequest": true,
+    "xmlHttpRequest": false,
     "javaScriptFrameworkSupport": {
       "angular": false,
       "dojo": false,

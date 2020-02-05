@@ -16,18 +16,52 @@ Click **Select** to start in deployment wizard.
 
 Use the defaults to create the instance except:
 
-* Instance Type: **t2.medium**
-	
-* Security group: Ensure the security group includes **SSH** and **HTTP** ports
+Step 2: Choose an Instance Type
+Use Instance Type: **t2.medium**
 
+Step 3: Configure Instance Details
+
+Click the arrow next to **Advanced Details** (bottom of the page) and in the **User data** field enter the following:
+```bash
+#!/bin/bash
+cd ~
+git clone https://github.com/Dynatrace-APAC/Workshop-BizOps
+
+export API_TOKEN=<Your_API_Token>
+export PAAS_TOKEN=<Your_PaaS_Token>
+export TENANTID=<Your_TenantID>
+export ENVIRONMENTID=
+
+cd Workshop-BizOps/util
+./deployDynatrace.sh
+
+```
+Replace the values with the values you collected from your Dynatrace environment.
+
+![AWS Userdata](/assets/aws_userdata.PNG)
+
+Step 4: Add Storage
+Accept the defaults
+
+Step 5: Add Tags
+Accept the defaults
+
+Step 6: Configure Security Group
+Ensure the security group includes **SSH** and **HTTP** ports
 
 ![Deploy](/assets/pre-securitygroup.png)
 
-Create a new key pair or use an existing one. **Please note: you will need the PEM key to access the instance via SSH.**
+Step 7: Review Instance Launch
+Create a new key pair or use an existing one. **Please note: you may need the PEM key to access the instance via SSH.**
 
 Launch the instance...
 
 Wait for the Status Checks to read 2/2 checks 
+
+It may take 5 - 10 mins for the server to launch.
+
+Once complete, in Dynatrace you should see the easyTravel application.
+
 
 
 ## Deploy Oneagent and Application Configuration to Dynatrace 
