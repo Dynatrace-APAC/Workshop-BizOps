@@ -27,13 +27,18 @@ Click the arrow next to **Advanced Details** (bottom of the page) and in the **U
 cd ~
 git clone https://github.com/Dynatrace-APAC/Workshop-BizOps
 
-export API_TOKEN=<Your_API_Token>
-export PAAS_TOKEN=<Your_PaaS_Token>
-export TENANTID=<Your_TenantID>
+cd Workshop-BizOps
+
+git pull origin master
+
+export API_TOKEN=n8dp7yshTbSyWTDdNOwpx
+export PAAS_TOKEN=7NGjaj18TFy_WkdxVgx03
+export TENANTID=rqr41448
 export ENVIRONMENTID=
 
-cd Workshop-BizOps/util
+cd util
 ./deployDynatrace.sh
+
 
 ```
 Replace the values with the values you collected from your Dynatrace environment.
@@ -62,9 +67,16 @@ It may take 5 - 10 mins for the server to launch.
 
 Once complete, in Dynatrace you should see the easyTravel application.
 
+---
+:arrow_up_small: [Back to overview](/README.md)
 
+# Troubleshooting
+
+If the above instructions fail to deploy the one agent correcly or the application rules are not correct follow the following instructions:
 
 ## Deploy Oneagent and Application Configuration to Dynatrace 
+
+SSH into the instance (using the your PEM Key)
 
 Clone this repository to the server
 
@@ -85,6 +97,7 @@ $  cd Workshop-BizOps/util
 ```
 
 Execute defineCredentials.sh and enter your:
+
 Dynatrace Tenant ID
 Dynatrace Environment ID (Leave Blank if using Dynatrace SaaS)
 Dynatrace API Token
@@ -116,6 +129,6 @@ Is this all correct? (y/n) : y
 The credentials file can be found here: ./creds.json
 ```
 
-
+Execute deployDynatrace.sh
 ---
 :arrow_up_small: [Back to overview](/README.md)
