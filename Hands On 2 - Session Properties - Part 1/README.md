@@ -19,7 +19,7 @@ In this lab, we will create a session properties to expose business data to Dyna
    * Apply cleanup rule: **true**  
    * Cleanup Rule Regex: **(.*?) status!**  
 
-![User Session Property Config](/img/usersession-config.PNG)
+![User Session Property Config](/img/userproperty-config-membership.PNG)
 
 3) Click **Save Property**
 
