@@ -4,6 +4,8 @@
 
 The following conatins the instructions to create the easyTravel application which will be used during this workshop.
 
+You will need your tennant id, API token and PaaS token.
+
 Access your AWS console and navigate to the **EC2** service.
 
 Select **Instances** > **Launch Instance**
