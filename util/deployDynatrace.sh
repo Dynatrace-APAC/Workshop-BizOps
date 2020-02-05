@@ -58,7 +58,8 @@ deployApplicationConfig()
 		
 	export APPLICATION_ID=$(curl -sX POST "https://"$TENANTID".live.dynatrace.com/api/config/v1/applications/web" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$API_TOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/application.json | jq -r '.id')
 
-
+	echo "Application ID: $APPLICATION_ID"
+	
 	echo "Application created."
 	
 	#APPLICATION-6D7CE8352E9AD9BC
