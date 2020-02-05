@@ -40,8 +40,9 @@ deployOneAgent()
 	echo "Dynatrace OneAgent Installed."
 	
 	echo "Restarting easyTravel..."
-	cd ~
-	./restart_easyTravel.sh
+	
+	/home/ubuntu/./restart_easyTravel.sh
+	
 	cd Workshop-BizOps/util
 	echo "easyTravel restarted."
 	

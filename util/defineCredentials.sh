@@ -33,7 +33,11 @@ then
       sed 's~DYNATRACE_ENVIRONMENT_ID~'"$DTENV"'~' | \
       sed 's~DYNATRACE_API_TOKEN~'"$DTAPI"'~' | \
       sed 's~DYNATRACE_PAAS_TOKEN~'"$DTPAAS"'~' >> $CREDS
-
+	
+	export API_TOKEN=$(cat creds.json | jq -r '.dynatraceApiToken')
+	export PAAS_TOKEN=$(cat creds.json | jq -r '.dynatracePaaSToken')
+	export TENANTID=$(cat creds.json | jq -r '.dynatraceTenantID')
+	export ENVIRONMENTID=$(cat creds.json | jq -r '.dynatraceEnvironmentID')
 fi
 
 cat $CREDS
