@@ -11,6 +11,7 @@ In this lab, we will create a session properties to expose business data to Dyna
 
    * Expression Type: **CSS Selector**  
    * Data Type: **String**  
+   * Display Name:  **Membership Status**  
    * Key:  **membershipstatus**  
    * CSS Selector:  **#loginForm\\:j_idt43**  
    * Store as user action property: **false**  
