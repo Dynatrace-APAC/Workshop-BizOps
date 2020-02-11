@@ -90,10 +90,10 @@ deployApplicationConfig()
 	## Synthetic Monitor...
 	echo "Creating sythetic monitor in Dynatrace..."
 	
-	sed -i 's/"description": "Loading of \"http://PUBLIC_HOSTNAME/\"",/"description": "Loading of \"http://'$PUBLIC_HOSTNAME'/\"",/' json/privatedetectionrule.json
+	sed -i 's/PUBLIC_HOSTNAME/'$PUBLIC_HOSTNAME'/' json/syntheticmonitor.json
 	
+	curl -sX POST "https://"$TENANTID".live.dynatrace.com/api/v1/synthetic/monitors/" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$API_TOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/syntheticmonitor.json
 
-	
 	echo "Sythetic monitor created."
 	
 	## Create Dashboards?
