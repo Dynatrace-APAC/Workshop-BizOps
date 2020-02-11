@@ -1,0 +1,495 @@
+{
+  "name": "easyTravel Booking",
+  "frequencyMin": 15,
+  "enabled": true,
+  "type": "BROWSER",
+  "createdFrom": "GUI",
+  "script": {
+    "type": "clickpath",
+    "version": "1.0",
+    "configuration": {
+      "device": {
+        "deviceName": "Desktop",
+        "orientation": "landscape"
+      }
+    },
+    "events": [
+      {
+        "type": "navigate",
+        "description": "Loading of \"http://PUBLIC_HOSTNAME/\"",
+        "url": "http://PUBLIC_HOSTNAME/",
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"loginForm:loginLink\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#loginForm\\:loginLink"
+            },
+            {
+              "type": "css",
+              "value": "a:contains(\"Login\")"
+            },
+            {
+              "type": "css",
+              "value": "div:contains(\"Login\"):eq(4)"
+            },
+            {
+              "type": "css",
+              "value": ".iceCmdLnk:eq(0)"
+            },
+            {
+              "type": "css",
+              "value": "#loginForm div:nth-child(6) a"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "network"
+        }
+      },
+      {
+        "type": "javascript",
+        "description": "Get Username/Password",
+        "javaScript": "var users = [\"agnieszka\", \"amaor\", \"aoi\", \"armelle\", \"ascon\", \"baudouin\", \"dominik\", \"fildzhah\", \"geoffry\", \"harihar\", \"janet\", \"jermaine\", \"kenjiro\", \"kumiko\", \"margarita\", \"maria\", \"mariusz\", \"philipp\", \"sybylla\", \"tubagus\", \"baisakhi\", \"bayu\", \"carole\", \"daan\", \"didier\", \"eka\", \"geoffry\", \"gerdi\", \"herold\", \"lazare\", \"leng\", \"mariusz\", \"philipp\", \"rafiki\", \"rashida\", \"sha\", \"tami\", \"tomasz\", \"tubagus\", \"yasmina\"];\n\nvar x = Math.floor((Math.random() * users.length));\n\napi.setValue(\"username\", users[x]);\napi.setValue(\"password\", users[x]);"
+      },
+      {
+        "type": "keystrokes",
+        "description": "keystrokes on \"Username\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#loginForm\\:username"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"text\"][name=\"loginForm:username\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[0][4]"
+            },
+            {
+              "type": "css",
+              "value": ".iceInpTxt"
+            },
+            {
+              "type": "css",
+              "value": "#loginForm\\:j_idt51 input:nth-child(3)"
+            }
+          ]
+        },
+        "simulateBlurEvent": true,
+        "textValue": "{username}",
+        "masked": false
+      },
+      {
+        "type": "keystrokes",
+        "description": "keystrokes on \"Password\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#loginForm\\:password"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"password\"][name=\"loginForm:password\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[0][5]"
+            },
+            {
+              "type": "css",
+              "value": ".iceInpSecrt"
+            },
+            {
+              "type": "css",
+              "value": "#loginForm\\:j_idt51 input:nth-child(5)"
+            }
+          ]
+        },
+        "simulateBlurEvent": true,
+        "textValue": "{password}",
+        "masked": false
+      },
+      {
+        "type": "click",
+        "description": "click on \"Login\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#loginForm\\:loginSubmit"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"submit\"][name=\"loginForm:loginSubmit\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[0][7]"
+            },
+            {
+              "type": "css",
+              "value": ".iceCmdBtn:eq(2)"
+            },
+            {
+              "type": "css",
+              "value": "#loginForm\\:j_idt51 input:nth-child(9)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "network"
+        }
+      },
+      {
+        "type": "javascript",
+        "description": "Get Trip Destination",
+        "javaScript": "var destination = [\"Golden Spring\", \"Gold Coast\", \"Goldsmith\", \"Goldonna\", \"Long Valley\", \"Long Beach\", \"Sylvania\", \"Grassy\", \"Mellette\", \"Purmela\", \"Carmel Valley\", \"Hemel Hempstead\", \"Melrose\", \"Maumelle\", \"Melvin Village\", \"Melvindale\", \"Emelle\", \"Jacmel\", \"New Riegel\", \"Gelsenkirchen\", \"Lochgelly\", \"Swengel\", \"Sigel\", \"Ridgely\", \"New Riegel\", \"Slate Spring\", \"Martell\", \"Westernville\", \"Berlin Center\", \"Artemus\", \"Fayette City\", \"Rochester Mills\", \"Chesterton\", \"Head Waters\", \"East Waterboro\", \"Chappell\", \"Wappapello\", \"Knapp\", \"Happy Corner\", \"Rappahannock Academy\", \"Scappoose\"];\n\nvar x = Math.floor((Math.random() * destination.length));\n\napi.setValue(\"destination\", destination[x]);"
+      },
+      {
+        "type": "keystrokes",
+        "description": "keystrokes on \"Trip Destination\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:destination"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"text\"][name=\"iceform:destination\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[1][5]"
+            },
+            {
+              "type": "css",
+              "value": ".iceSelInpTxtTxt"
+            },
+            {
+              "type": "css",
+              "value": "#iceform\\:j_idt131-0-1 div input"
+            }
+          ]
+        },
+        "simulateBlurEvent": true,
+        "textValue": "{destination}",
+        "masked": false,
+        "wait": {
+          "waitFor": "network"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"Search\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:search"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"submit\"][name=\"iceform:search\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[1][9]"
+            },
+            {
+              "type": "css",
+              "value": ".iceCmdBtn:eq(3)"
+            },
+            {
+              "type": "css",
+              "value": "#iceform\\:j_idt128 div:nth-child(3) input:nth-child(2)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "network"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"iceform:dataList:0:bookLink\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:dataList\\:0\\:bookLink"
+            },
+            {
+              "type": "css",
+              "value": "a:contains(\"Book Now\"):eq(1)"
+            },
+            {
+              "type": "css",
+              "value": "div:contains(\"If you wish to stay in a hotel that has friendly staff and an inviting ambience that reminds you of home, then head to the Grand Hotel.\"):eq(7)"
+            },
+            {
+              "type": "css",
+              "value": ".commonButton:eq(5)"
+            },
+            {
+              "type": "css",
+              "value": "#iceform\\:dataList\\:0\\:j_idt222 a:nth-child(6)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"iceform:bookReviewNext\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:bookReviewNext"
+            },
+            {
+              "type": "css",
+              "value": "a:contains(\"Next\")"
+            },
+            {
+              "type": "css",
+              "value": "div:contains(\"To look for a different journey please press the\"):eq(4)"
+            },
+            {
+              "type": "css",
+              "value": ".commonButton:eq(5)"
+            },
+            {
+              "type": "css",
+              "value": "#iceform div:nth-child(6) a:nth-child(7)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"iceform:j_idt118\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:j_idt118"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"image\"][src$=\"img/privacypolicy_lock.png\"][name=\"iceform:j_idt118\"]"
+            },
+            {
+              "type": "css",
+              "value": ".iceCmdBtn:eq(3)"
+            },
+            {
+              "type": "css",
+              "value": "#iceform div:nth-child(6) div:nth-child(5) input"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "network"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"Next\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:bookPaymentNext"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"submit\"][name=\"iceform:bookPaymentNext\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[1][10]"
+            },
+            {
+              "type": "css",
+              "value": ".iceCmdBtn:eq(4)"
+            },
+            {
+              "type": "css",
+              "value": "#iceform div:nth-child(6) input:nth-child(7)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"Finish\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#iceform\\:bookFinishFinish"
+            },
+            {
+              "type": "css",
+              "value": "input[type=\"submit\"][name=\"iceform:bookFinishFinish\"]"
+            },
+            {
+              "type": "dom",
+              "value": "document.forms[1][4]"
+            },
+            {
+              "type": "css",
+              "value": ".iceCmdBtn:eq(3)"
+            },
+            {
+              "type": "css",
+              "value": "#iceform div:nth-child(6) input:nth-child(6)"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      },
+      {
+        "type": "click",
+        "description": "click on \"loginForm:logoutLink\"",
+        "target": {
+          "locators": [
+            {
+              "type": "css",
+              "value": "#loginForm\\:logoutLink"
+            },
+            {
+              "type": "css",
+              "value": "a:contains(\"Silver status!\n\t\tLogout\")"
+            },
+            {
+              "type": "css",
+              "value": "div:contains(\"Silver status!\"):eq(4)"
+            },
+            {
+              "type": "css",
+              "value": ".iceOutLnk:eq(1)"
+            },
+            {
+              "type": "css",
+              "value": "#loginForm div:nth-child(7) a"
+            }
+          ]
+        },
+        "button": 0,
+        "wait": {
+          "waitFor": "page_complete"
+        }
+      }
+    ]
+  },
+  "locations": [
+    "GEOLOCATION-2FD31C834DE4D601",
+    "GEOLOCATION-C1C5636EE98E4C83"
+  ],
+  "anomalyDetection": {
+    "outageHandling": {
+      "globalOutage": true,
+      "localOutage": false,
+      "localOutagePolicy": {
+        "affectedLocations": 1,
+        "consecutiveRuns": 3
+      }
+    },
+    "loadingTimeThresholds": {
+      "enabled": false,
+      "thresholds": []
+    }
+  },
+  "tags": [],
+  "managementZones": [],
+  "automaticallyAssignedApps": [],
+  "manuallyAssignedApps": [],
+  "keyPerformanceMetrics": {
+    "loadActionKpm": "VISUALLY_COMPLETE",
+    "xhrActionKpm": "VISUALLY_COMPLETE"
+  },
+  "events": [
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-1B80188F3AD9B67D",
+      "name": "keystrokes on \"Password\"",
+      "sequenceNumber": 5
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-76683BCC0294AD56",
+      "name": "click on \"Login\"",
+      "sequenceNumber": 6
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-DEFB58472F2AEAF8",
+      "name": "Get Trip Destination",
+      "sequenceNumber": 7
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-3261C9830B813461",
+      "name": "click on \"Search\"",
+      "sequenceNumber": 9
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-553041D6B25756B4",
+      "name": "click on \"iceform:dataList:0:bookLink\"",
+      "sequenceNumber": 10
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-E8883014C2866866",
+      "name": "click on \"iceform:bookReviewNext\"",
+      "sequenceNumber": 11
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-FE979831F7F5F9B4",
+      "name": "click on \"iceform:j_idt118\"",
+      "sequenceNumber": 12
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-38E3ED947F0C25EA",
+      "name": "click on \"Next\"",
+      "sequenceNumber": 13
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-118917511C335E91",
+      "name": "click on \"Finish\"",
+      "sequenceNumber": 14
+    },
+    {
+      "entityId": "SYNTHETIC_TEST_STEP-5CA3A742BBEBEAB1",
+      "name": "click on \"loginForm:logoutLink\"",
+      "sequenceNumber": 15
+    }
+  ]
+}

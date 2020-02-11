@@ -86,6 +86,16 @@ deployApplicationConfig()
 	
 	echo "Detection rules created."
 	
+	
+	## Synthetic Monitor...
+	echo "Creating sythetic monitor in Dynatrace..."
+	
+	sed -i 's/"description": "Loading of \"http://PUBLIC_HOSTNAME/\"",/"description": "Loading of \"http://'$PUBLIC_HOSTNAME'/\"",/' json/privatedetectionrule.json
+	
+
+	
+	echo "Sythetic monitor created."
+	
 	## Create Dashboards?
 }
 
