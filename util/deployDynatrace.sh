@@ -1,11 +1,6 @@
 #!/bin/bash
 
 
-#export API_TOKEN=$(cat creds.json | jq -r '.dynatraceApiToken')
-#export PAAS_TOKEN=$(cat creds.json | jq -r '.dynatracePaaSToken')
-#export TENANTID=$(cat creds.json | jq -r '.dynatraceTenantID')
-#export ENVIRONMENTID=$(cat creds.json | jq -r '.dynatraceEnvironmentID')
-
 export TENANTID=$TENANTID
 
 echo "Deploying Dynatrace Oneagent using the following credentials: "
@@ -39,17 +34,18 @@ deployOneAgent()
 	sudo /bin/sh Dynatrace-OneAgent-Linux.sh APP_LOG_CONTENT_ACCESS=1 INFRA_ONLY=0
 	echo "Dynatrace OneAgent Installed."
 	
-	echo "Restarting easyTravel..."
+	#echo "Restarting easyTravel..."
 	
 	#/home/ubuntu/./restart_easyTravel.sh
 	
-	cd Workshop-BizOps/util
-	echo "easyTravel restarted."
+	#echo "easyTravel restarted."
 	
 }
 
 deployApplicationConfig()
 {
+	cd Workshop-BizOps/util
+	
 	export PUBLIC_HOSTNAME=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname)
 	export PRIVATE_HOSTNAME=$(hostname)
 	
@@ -99,10 +95,7 @@ deployApplicationConfig()
 	## Create Dashboards?
 }
 
-#if [[ $REPLY =~ ^[Yy]$ ]]; then
+
 echo "Download Dynatrace OneAgent from Cluster..."
 deployOneAgent
 deployApplicationConfig
-#else
-#    exit 1
-#fi
