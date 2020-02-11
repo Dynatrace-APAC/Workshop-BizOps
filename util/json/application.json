@@ -116,8 +116,18 @@
   },
   "userActionNamingSettings": {
     "placeholders": [],
-    "loadActionNamingRules": [],
-    "xhrActionNamingRules": [],
+    "loadActionNamingRules": [
+      {
+        "template": "Loading of page {pageUrlPath}",
+        "conditions": []
+      }
+    ],
+    "xhrActionNamingRules": [
+      {
+        "template": "{userInteraction} on \"{elementIdentifier}\" on page {pageUrlPath}",
+        "conditions": []
+      }
+    ],
     "ignoreCase": true,
     "splitUserActionsByDomain": true
   },
