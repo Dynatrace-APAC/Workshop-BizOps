@@ -49,7 +49,7 @@ Ensure you are using **Environment API v2** (top right corner of the screen)
 
 1. In the API list select **Metrics**
 
-2. Select **GET /metrics/series/{selector}**
+2. Select **GET /metrics/query**
 
 3. Click **Try it out**
 
@@ -57,8 +57,9 @@ Ensure you are using **Environment API v2** (top right corner of the screen)
 
 4. Enter the following parameters: 
 
-	* selector: **builtin:apps.web.action.apdex**
-	* from: **now-1d**
+	* metricSelector: **builtin:apps.web.apdex.userType:filter(eq(User type,Real users)):names**
+	* resolution: **5m**
+	* from: **now-4h**
 
 5. Change Response content type to **text/csv; header=present; charset=utf-8**
 
