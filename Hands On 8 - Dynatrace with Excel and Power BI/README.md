@@ -67,11 +67,10 @@ Ensure you are using **Environment API v2** (top right corner of the screen)
 
 6. Click **Execute**. If successful the result should be shown looking something like this:
 
-Copy the **Request URL** for use in the next section.
 
 ![API Result](/img/api-result-v2.PNG)
 
-
+Copy the **Request URL** for use in the next section.
 
 ## Section 2 - Create API Token & Timeseries API Call
 
@@ -81,18 +80,14 @@ Copy the **Request URL** for use in the next section.
 
  3. Select **Advanced**
  
- 4. Enter your **Request URL** and append **&Api-Token=<your-API-token>**
+ 4. Enter your **Request URL** in **URL Parts** 
 
-The URL will look something like this:
+5. Add the following **HTTP request header parameter** then click **OK** and **Connect**
 
-https://jlp305.dynatrace-managed.com/e/10-Sydney-Perform-2019--CreatedDate-8-8-2019/api/v2/metrics/series/builtin%3Aapps.web.action.apdex?resolution=120&from=now-1d&Api-Token=1234567890
+     Accept text/csv; header=present; charset=utf-8
+	 Authorization Api-Token <your-API-token>
 
-5. Add the following **HTTP request header parameter**
-
-     Accept 
-     text/csv; header=present; charset=utf-8
-
-![API Result](/img/excel-import-fromweb-v2.PNG)
+![API Result](/img/bi-fromweb.PNG)
 
 6. Click Load
 
