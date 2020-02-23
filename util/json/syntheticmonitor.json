@@ -3,7 +3,7 @@
   "frequencyMin": 15,
   "enabled": true,
   "type": "BROWSER",
-  "createdFrom": "GUI",
+  "createdFrom": "API",
   "script": {
     "type": "clickpath",
     "version": "1.0",
@@ -16,7 +16,7 @@
     "events": [
       {
         "type": "navigate",
-        "description": "Loading of \"http://PUBLIC_HOSTNAME/\"",
+        "description": "Loading of /orange.jsf",
         "url": "http://PUBLIC_HOSTNAME/",
         "wait": {
           "waitFor": "page_complete"
@@ -439,57 +439,5 @@
   "keyPerformanceMetrics": {
     "loadActionKpm": "VISUALLY_COMPLETE",
     "xhrActionKpm": "VISUALLY_COMPLETE"
-  },
-  "events": [
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-1B80188F3AD9B67D",
-      "name": "keystrokes on \"Password\"",
-      "sequenceNumber": 5
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-76683BCC0294AD56",
-      "name": "click on \"Login\"",
-      "sequenceNumber": 6
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-DEFB58472F2AEAF8",
-      "name": "Get Trip Destination",
-      "sequenceNumber": 7
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-3261C9830B813461",
-      "name": "click on \"Search\"",
-      "sequenceNumber": 9
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-553041D6B25756B4",
-      "name": "click on \"iceform:dataList:0:bookLink\"",
-      "sequenceNumber": 10
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-E8883014C2866866",
-      "name": "click on \"iceform:bookReviewNext\"",
-      "sequenceNumber": 11
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-FE979831F7F5F9B4",
-      "name": "click on \"iceform:j_idt118\"",
-      "sequenceNumber": 12
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-38E3ED947F0C25EA",
-      "name": "click on \"Next\"",
-      "sequenceNumber": 13
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-118917511C335E91",
-      "name": "click on \"Finish\"",
-      "sequenceNumber": 14
-    },
-    {
-      "entityId": "SYNTHETIC_TEST_STEP-5CA3A742BBEBEAB1",
-      "name": "click on \"loginForm:logoutLink\"",
-      "sequenceNumber": 15
-    }
-  ]
+  }
 }
