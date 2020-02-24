@@ -4,14 +4,7 @@
 
 The following conatins the instructions to create the easyTravel application which will be used during this workshop.
 
-You will need your **tenant id**, **API token** and **PaaS token**.
-API token requires the following permissions: 
-- Access problem and event feed, metrics, and topology
-- Create and read synthetic monitors, locations, and nodes
-- Read configuration
-- Write configuration
-
-### AWS
+You will need your tennant id, API token and PaaS token.
 
 Access your AWS console and navigate to the **EC2** service.
 
