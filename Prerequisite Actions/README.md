@@ -30,7 +30,7 @@ Use the defaults to create the instance except:
 
 Use Instance Type: **t2.medium**
 
-Step 3: Configure Instance Details
+#### Configure Instance Details
 
 Click the arrow next to **Advanced Details** (bottom of the page) and in the **User data** field enter the following:
 ```bash
@@ -42,9 +42,9 @@ cd Workshop-BizOps
 
 git pull origin master
 
-export API_TOKEN=n8dp7yshTbSyWTDdNOwpx
-export PAAS_TOKEN=7NGjaj18TFy_WkdxVgx03
-export TENANTID=rqr41448
+export API_TOKEN=<YOUR_API_TOKEN>
+export PAAS_TOKEN=<YOUR_PaaS_TOKEN>
+export TENANTID=<YOUR_TenantID_TOKEN
 export ENVIRONMENTID=
 
 cd util
