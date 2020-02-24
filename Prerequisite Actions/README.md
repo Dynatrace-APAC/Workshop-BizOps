@@ -5,7 +5,8 @@
 The following conatins the instructions to create the easyTravel application which will be used during this workshop.
 
 You will need your **tenant id**, **API token** and **PaaS token**.
-API token requires the following permissions: 
+
+The API token requires the following permissions: 
 - Access problem and event feed, metrics, and topology
 - Create and read synthetic monitors, locations, and nodes
 - Read configuration
