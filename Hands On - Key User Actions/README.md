@@ -1,38 +1,30 @@
-# Hands On 1 - Basic Funnel Dashboard
+# Hands On - Key User Actions
 
-In this lab, we will create a dashboard to display a basic sales funnel.
+In this lab, we will create mark user actions as key user actions.
 
-In the Dynatrace UI, create a new dashboard named "Sales Funnel" (**Dashboards** > **Create Dashboard**)  
+## Key User Action
+First we need to mark the page (/orange-booking-finish.jsf) as a key user action:
+1) Access the easyTravel Website application
 
-1. Add the User Sessions Query to the dashboard and configure the tile
+2) Under **Top 3 user actions** click **View full details**
 
-![USQL Icon](/img/usql-icon.PNG)
+3) Scroll down to **Top 100 user actions** and filter a user action e.g. **orange-booking-finish.jsf**
 
-2. Enter the UQSL as follows
+![Conversion Goal](/img/conversion_goal_filter.PNG)
 
-**select count(*) as "Homepage Requests" from usersession where useraction.name = "Loading of page /orange.jsf"**
+4) Click on the user user action e.g **Loading of page /orange-booking-finish.jsf** then click on **Mark as key user action**
 
-![USQL](/img/usql-query.PNG)
+![Conversion Goal](/img/conversion_goal_makua.PNG)
 
-3. Click on "Save Changes to dashboard"
+Repeat the above to dd the following as key user actions:
 
-4. Repeat the above steps to create dashboard tiles for:
-
-  Review Page:
-  
-    select count(*) as "Review Page Requests" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf"
-
-  Payment Page:
-  
-    select count(*) as "Payment Page Requests" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name="Loading of page /orange-booking-payment.jsf"
-
-  Finish Page:
-  
-    select count(*) as "Finish Page Requests" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name="Loading of page /orange-booking-payment.jsf" and useraction.name="Loading of page /orange-booking-finish.jsf"
-
-When you are finished your dashboard should look something like this:
-
-![Dashboard Basic Funnel](/img/usql-basic-funnel.PNG)
+- loading of page /
+- loading of page /orange-booking-finish.jsf
+- loading of page /orange-booking-review.jsf
+- loading of page /orange-booking-payment.jsf
+- click on "login" on page /
+- click on "search" on page /
+- loading of page /special-offers.jsp
 
 
 :arrow_up_small: [Back to overview](/README.md)
