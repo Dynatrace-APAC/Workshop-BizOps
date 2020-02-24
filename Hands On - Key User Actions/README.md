@@ -1,9 +1,9 @@
 # Hands On - Key User Actions
 
-In this lab, we will create mark user actions as key user actions.
+In this lab, we will mark user actions as key user actions.
 
 ## Key User Action
-First we need to mark the page (/orange-booking-finish.jsf) as a key user action:
+
 1) Access the easyTravel Website application
 
 2) Under **Top 3 user actions** click **View full details**
