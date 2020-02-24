@@ -145,7 +145,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ],
       "metric": "APDEX"
     },
@@ -163,7 +163,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ]
     },
     {
@@ -180,7 +180,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ]
     },
     {
@@ -197,7 +197,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ]
     },
     {
@@ -214,7 +214,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ]
     },
     {
@@ -231,7 +231,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ],
       "metric": "ACTION_COUNT"
     },
@@ -249,7 +249,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ],
       "metric": "ACTION_COUNT"
     },
@@ -281,7 +281,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ]
     },
     {
@@ -298,7 +298,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
         "managementZone": null
       },
       "assignedEntities": [
-        "APPLICATION-FF9A27BE971A5B6D"
+        "APPLICATION-534A6A58D004195A"
       ],
       "metric": "SESSION_USERS"
     },
@@ -315,7 +315,7 @@ Authorise **ReadConfigToken (apiKey)** and **WriteConfigToken (apiKey)** for thi
       "tileFilter": {
         "managementZone": null
       },
-      "markdown": "##[easyTravel Production Overview](#uemapplications/uemappmetrics;uemapplicationId=APPLICATION-FF9A27BE971A5B6D)"
+      "markdown": "##[easyTravel Production Overview](#uemapplications/uemappmetrics;uemapplicationId=APPLICATION-534A6A58D004195A)"
     },
     {
       "name": "Markdown",
@@ -532,15 +532,5 @@ The server response should be response code **201** with a response body like th
 Navigate back to the Dynatrace dashboards. The dashboard should look something like this:
 
 ![Dashboard](/img/dashboard-api-dashboard.PNG)
-
-If you used the same application names used throughout these labs (Application name: easyTravel) then the above dashboard should display correctly. 
-
-If you used different  names, then you will need to change the ids used in the above JSON. The ids used in the above JSON are:
-
-**Application Id**
-
-Find: APPLICATION-FF9A27BE971A5B6D
-
-Replace: with your application id of your application
 
 :arrow_up_small: [Back to overview](/README.md)
