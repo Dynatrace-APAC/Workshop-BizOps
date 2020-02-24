@@ -44,7 +44,7 @@ git pull origin master
 
 export API_TOKEN=<YOUR_API_TOKEN>
 export PAAS_TOKEN=<YOUR_PaaS_TOKEN>
-export TENANTID=<YOUR_TenantID_TOKEN
+export TENANTID=<YOUR_TenantID_TOKEN>
 export ENVIRONMENTID=
 
 cd util
@@ -56,18 +56,18 @@ Replace the values with the values you collected from your Dynatrace environment
 
 ![AWS Userdata](/img/aws_userdata.PNG)
 
-Step 4: Add Storage
+#### Add Storage
 Accept the defaults
 
-Step 5: Add Tags
+#### Add Tags
 Accept the defaults
 
-Step 6: Configure Security Group
+#### Configure Security Group
 Ensure the security group includes **SSH** and **HTTP** ports
 
 ![Deploy](/img/pre-securitygroup.png)
 
-Step 7: Review Instance Launch
+#### Review Instance Launch
 Create a new key pair or use an existing one. **Please note: you may need the PEM key to access the instance via SSH.**
 
 Launch the instance...
