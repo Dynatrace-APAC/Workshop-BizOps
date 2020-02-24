@@ -24,8 +24,6 @@ Search the **Community AMIs** for "Dynatrace Bizops Workshop"
 
 Click **Select** to start in deployment wizard.
 
-Use the defaults to create the instance except:
-
 #### Choose an Instance Type
 
 Use Instance Type: **t2.medium**
