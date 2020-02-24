@@ -12,7 +12,7 @@ Prerequisites for this session:
 
 The following are only required to create a demo application we can use for this session:
 * AWS account, with the ability to create an EC2 instance from a public AMI. Signup to a free trial [here](https://aws.amazon.com/free/).
-* SSH client such as [mobaxterm](https://mobaxterm.mobatek.net/).
+
 
 ## Prerequisite Actions
 Please follow the [Prerequisite Actions](/Prerequisite%20Actions) to create the application that will be used throughout this workshop.
