@@ -9,8 +9,11 @@ Access the easyTravel Website application monitoring settings
 
 Select **Conversion Goals** and click **Add goal** and enter the following:
 
-   Name: **Successful Bookings - open final Page**  
-   Type of goal: **Destination** > **contains** > **/orange-booking-finish.jsf**  
+  * Name: Successful Bookings  
+  * Type of goal: User Action  
+  * Rule applies to: Load actions  
+  * Rule: Action Name > contains > **loading of page /orange-booking-finish.jsf** 
+ 
 
 ![Conversion Goal](/img/conversion_goal.PNG)
 
