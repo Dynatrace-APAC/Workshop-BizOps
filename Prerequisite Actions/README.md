@@ -26,7 +26,8 @@ Click **Select** to start in deployment wizard.
 
 Use the defaults to create the instance except:
 
-Step 2: Choose an Instance Type
+####Choose an Instance Type
+
 Use Instance Type: **t2.medium**
 
 Step 3: Configure Instance Details
