@@ -47,11 +47,11 @@ You can view the user sessions that have the booking total value by running the 
 
     SELECT * FROM usersession WHERE doubleProperties.bookingtotal IS NOT NULL ORDER BY startTime DESC
    
-## Trip Destination
+## Trip Journey
 
-For the trip destination, back in easyTravel:
+For the trip Journey, back in easyTravel:
 
-1) Right click on the Destination value and click **inspect**
+1) Right click on the **Journey** value and click **inspect**
 
 ![easyTravel Step 3](/img/easytravel-dest-step3.png)
 
@@ -66,16 +66,16 @@ Create the session property in Dynatrace.
 
    * Expression Type: **CSS Selector**  
    * Data Type: **String**  
-   * Display Name: **Destination**
-   * Key:  **destination**  
-   * CSS Selector:  **The CSS Selector you copied above**
+   * Display Name: **Journey**
+   * Key:  **journey**  
+   * CSS Selector:  **The CSS Selector you copied above** e.g. #iceform\:popupDetailsLink
    * Store as user action property: **false**  
    * Store as session property: **true**  
    * Apply cleanup rule: **false**  
 
 You can view the user sessions that have the destination value by running the following USQL: 
 
-    SELECT * FROM usersession WHERE stringProperties.destination IS NOT NULL ORDER BY startTime DESC
+    SELECT * FROM usersession WHERE stringProperties.journey IS NOT NULL ORDER BY startTime DESC
     
     
 It may take 5-10 mins to see results in Dynatrace because session properties are only available when the user session is completed.

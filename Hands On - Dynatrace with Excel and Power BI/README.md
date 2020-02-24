@@ -1,5 +1,5 @@
 
-# Hands On 8 - Pull Dynatrace data into Excel using Power BI
+# Hands On - Pull Dynatrace data into Excel using Power BI
 
 In this lab is split into two sections, the first section generates an API token request URL we can use the fetch data from Dynatrace. The second section uses this URL to import data into Excel.
 If you already have an API token and URL then jump stright to the part of this lab
