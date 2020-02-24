@@ -1,11 +1,11 @@
-# Hands On 2 - Sessions Properties - Part 1
+# Hands On - Sessions Properties - Part 1
 
 In this lab, we will create a session properties to expose business data to Dynatrace
 
 ## Membership Status
 
 1) Access the easyTravel application monitoring settings
-  Applications > easyTravel > (...) Edit
+  Applications > easyTravel Website > (...) Edit
 
 2) Select **Session and User action properties** and click **Add property** and enter the following:
 
