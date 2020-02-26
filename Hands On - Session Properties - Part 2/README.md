@@ -80,4 +80,8 @@ You can view the user sessions that have the destination value by running the fo
     
 It may take 5-10 mins to see results in Dynatrace because session properties are only available when the user session is completed.
 
+If you get stuck the use the following:
+
+
+
 :arrow_up_small: [Back to overview](/README.md)
