@@ -9,6 +9,8 @@ echo "PAAS_TOKEN = $PAAS_TOKEN"
 echo "TENANTID = $TENANTID"
 echo "ENVIRONMENTID (Dynatrace Managed) = $ENVIRONMENTID"
 
+pwd
+
 echo ""
 #read -p "Is this all correct? (y/n) : " -n 1 -r
 echo ""
@@ -34,11 +36,11 @@ deployOneAgent()
 	sudo /bin/sh Dynatrace-OneAgent-Linux.sh APP_LOG_CONTENT_ACCESS=1 INFRA_ONLY=0
 	echo "Dynatrace OneAgent Installed."
 	
-	#echo "Restarting easyTravel..."
+	echo "Restarting easyTravel..."
 	
-	#/home/ubuntu/./restart_easyTravel.sh
+	/home/ubuntu/./restart_easyTravel.sh
 	
-	#echo "easyTravel restarted."
+	echo "easyTravel restarted."
 	
 }
 

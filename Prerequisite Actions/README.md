@@ -1,6 +1,6 @@
 # Prerequisites Actions for the Dynatrace BizOps Workshop 
 
-## Create easyTravel Application
+## Create the easyTravel Application
 
 The following conatins the instructions to create the easyTravel application which will be used during this workshop.
 
@@ -8,6 +8,7 @@ You will need your **tenant id**, **API token** and **PaaS token**.
 
 The API token requires the following permissions: 
 - Access problem and event feed, metrics, and topology
+- Read synthetic monitors, locations, and nodes
 - Create and read synthetic monitors, locations, and nodes
 - Read configuration
 - Write configuration
