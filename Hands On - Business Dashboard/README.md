@@ -24,7 +24,7 @@ The above dashboard has the following components:
    
 7) **User Session Query** - Total Revenue by Hour  
 
-       SELECT DATETIME(starttime, 'hh:mm', '30m'),AVG(usersession.doubleProperties.bookingtotal) AS "Revenue (USD)" FROM usersession WHERE useraction.application="easyTravel Website" and (useraction.name="loading of page /orange-booking-finish.jsf") GROUP BY DATETIME(starttime, 'hh:mm', '30m')
+       SELECT DISTINCT DATETIME(starttime, "HH:mm", "30m") as "Time",AVG(usersession.doubleProperties.bookingtotal) AS "Revenue (USD)" FROM usersession WHERE useraction.application="easyTravel Website" and (useraction.name="loading of page /orange-booking-finish.jsf") 
 
 8) **User Session Query** - Revenue by Loyalty Status - Chart
 

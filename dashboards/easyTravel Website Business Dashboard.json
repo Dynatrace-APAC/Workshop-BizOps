@@ -1,0 +1,324 @@
+{
+  "dashboardMetadata": {
+    "name": "Workshop BizOps - easyTravel Website Business Dashboard - Master",
+    "shared": false,
+    "owner": "kevin.leng@dynatrace.com",
+    "sharingDetails": {
+      "linkShared": true,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "User behavior",
+      "tileType": "SESSION_METRICS",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-534A6A58D004195A"
+      ]
+    },
+    {
+      "name": "Top conversion goals",
+      "tileType": "UEM_CONVERSIONS_OVERALL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 304,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-534A6A58D004195A"
+      ]
+    },
+    {
+      "name": "Conversion goal",
+      "tileType": "UEM_CONVERSIONS_PER_GOAL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 608,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-534A6A58D004195A"
+      ],
+      "metric": "af19904d-e497-42f0-8c0c-3013bbbc2fc3"
+    },
+    {
+      "name": "Bounce rate",
+      "tileType": "BOUNCE_RATE",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 912,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-534A6A58D004195A"
+      ]
+    },
+    {
+      "name": "Key user action overview",
+      "tileType": "UEM_KEY_USER_ACTIONS",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1216,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "assignedEntities": [
+        "APPLICATION-534A6A58D004195A"
+      ]
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Total Revenue",
+      "query": "SELECT SUM(doubleProperties.bookingtotal) AS \"Revenue (USD)\" FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") ",
+      "type": "SINGLE_VALUE"
+    },
+    {
+      "name": "easyTravel Overview",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1520,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Total Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 874,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 304,
+        "width": 570,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Total Revenue by Hour",
+      "query": "SELECT DISTINCT DATETIME(starttime, \"HH:mm\", \"30m\") as \"Time\",AVG(usersession.doubleProperties.bookingtotal) AS \"Revenue (USD)\" FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") ",
+      "type": "LINE_CHART"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 874,
+        "width": 418,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Revenue by Loyalty Status",
+      "query": "SELECT usersession.stringProperties.membershipstatus, SUM(usersession.doubleProperties.bookingtotal) AS \"Revenue\" FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and usersession.stringProperties.membershipstatus IS NOT NULL GROUP BY usersession.stringProperties.membershipstatus",
+      "type": "COLUMN_CHART"
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 1292,
+        "width": 228,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Revenue by Loyalty Status",
+      "query": "SELECT usersession.stringProperties.membershipstatus AS \"Loyalty Status\", SUM(usersession.doubleProperties.bookingtotal) AS \"Revenue\" FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and usersession.stringProperties.membershipstatus IS NOT NULL GROUP BY usersession.stringProperties.membershipstatus",
+      "type": "TABLE"
+    },
+    {
+      "name": "Bookings by Member Type",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 874,
+        "width": 646,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 0,
+        "width": 418,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Bookings by Trip Destination",
+      "query": "SELECT usersession.stringProperties.journey, SUM(usersession.doubleProperties.bookingtotal) FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and usersession.stringProperties.journey IS NOT NULL GROUP BY usersession.stringProperties.journey ",
+      "type": "PIE_CHART"
+    },
+    {
+      "name": "Revenue % by Destination",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 0,
+        "width": 418,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 418,
+        "width": 608,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Revenue by Loyalty Users",
+      "query": "SELECT userId AS \"Customer\", country AS \"Origin Country\", stringProperties.membershipstatus AS \"Loyalty Status\", SUM(doubleProperties.bookingtotal) AS \"Revenue\", AVG(doubleProperties.bookingtotal) AS \"Average Trip Spend\" FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and doubleProperties.bookingtotal IS NOT NULL AND CITY IS NOT NULL AND userId IS NOT NULL AND stringProperties.membershipstatus  IN (\"Gold\", \"Platinum\", \"Silver\") GROUP BY userId, country, stringProperties.membershipstatus ORDER BY sum(doubleProperties.bookingtotal) DESC",
+      "type": "TABLE"
+    },
+    {
+      "name": "Revenue by User",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 418,
+        "width": 608,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 1026,
+        "width": 494,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Revenue by User Location",
+      "query": "SELECT city AS \"Origin City\", country AS \"Origin Country\", SUM(doubleProperties.bookingtotal) AS \"Revenue\", AVG(doubleProperties.bookingtotal) AS \"Average Trip Spend\" FROM usersession WHERE useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and doubleProperties.bookingtotal IS NOT NULL AND CITY IS NOT NULL GROUP BY city, country ORDER BY sum(doubleProperties.bookingtotal) DESC",
+      "type": "TABLE"
+    },
+    {
+      "name": "Revenue by User Location",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 646,
+        "left": 1026,
+        "width": 494,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    }
+  ]
+}

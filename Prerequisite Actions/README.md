@@ -11,6 +11,7 @@ The API token requires the following permissions:
 - Create and read synthetic monitors, locations, and nodes
 - Read configuration
 - Write configuration
+- User Sessions
 
 ### AWS
 
