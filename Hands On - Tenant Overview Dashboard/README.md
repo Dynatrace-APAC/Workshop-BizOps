@@ -20,30 +20,52 @@ USQL Tiles:
 	- USQL Category: **select count(usersessionid) as "Satisfied Users" from usersession where userExperienceScore="SATISFIED"**
 	- Compare with previous timeframe: **true**
 	- Dynamic time-frame shift: **true**
+	- Visualization types: **Single value**
 
-- Action count (by Apdex category)
-	- Category: Applications
-	- Metric: Action count (by Apdex category) (Sum)
-	- View Results as: Pie
-	- Filtered by: Application: **easyTravel Website**
+- Tolerated Users
+	- USQL Category: **select count(usersessionid) as "Tolerated Users" from usersession where userExperienceScore="TOLERATED"**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Single value**
 
-- Real User Errors
-	- Category: Applications
-	- Metric: Count of errors (by user type, error type and error origin) (Sum)
-	- View Results as: Pie
-	- User type: Filtered by: **Real Users**
-	- Filtered by: Application: **easyTravel Website**
+- Frustrated Users
+	- USQL Category: **select count(usersessionid) as "Frustrated Users" from usersession where userExperienceScore="FRUSTRATED"**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Single value**
 	
-- Active Sessions
-	- Category: Applications
-	- Metric: Active Sessions
-	- View Results as: Top List
-	- Filtered by: Application: **easyTravel Website**
+- Duration 90th Percentile
+	- USQL Category: **select PERCENTILE(duration,90) as "Duration 90th Percentile" from useraction**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Single value**
+
+- Visually Complete 90th Percentile
+	- USQL Category: **select PERCENTILE(visuallyCompleteTime,90) as "Visually Complete 90th Percentile" from useraction**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Single value**
+
+- Speed Index 90th Percentile
+	- USQL Category: **select PERCENTILE(speedIndex,90) as "Speed Index 90th Percentile" from useraction**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Single value**
 	
-- Session Duration
-	- Category: Applications
-	- Metric: Session Duration
-	- View Results as: Top List
-	- Filtered by: Application: **easyTravel Website**
+- Duration
+	- USQL Category: **select DISTINCT DATETIME(starttime, "HH:mm", "10m") as "Time", avg(useraction.duration) as "Duration" from useraction**
+	- Compare with previous timeframe: **false**
+	- Visualization types: **Bar chart**
+
+- Visually Complete
+	- USQL Category: **select DISTINCT DATETIME(starttime, "HH:mm", "10m") as "Time", AVG(visuallyCompleteTime) as "Visually Complete" from useraction**
+	- Compare with previous timeframe: **false**
+	- Visualization types: **Bar chart**
+
+- Speed Index
+	- USQL Category: **select DISTINCT DATETIME(starttime, "HH:mm", "10m") as "Time", AVG(speedIndex) as "Speed Index" from useraction**
+	- Compare with previous timeframe: **false**
+	- Visualization types: **Bar chart**
+	
 
 :arrow_up_small: [Back to overview](/README.md)
