@@ -2,7 +2,7 @@
 
 In this lab, we will build a Sales Funnel Dashboard 
 
-![Sales Funnel](/img/sales-funnel-done.PNG)
+![Sales Funnel](/img/sales-funnel-done.png)
 
 Add the following elements to the dashboard:
 
