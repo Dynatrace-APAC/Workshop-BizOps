@@ -1,8 +1,8 @@
-# Hands On 6 - Sales Funnel Dashboard
+# Hands On - Sales Funnel Dashboard
 
 In this lab, we will build a Sales Funnel Dashboard 
 
-![USQL Icon](/img/sales-funnel-done.PNG)
+![Sales Funnel](/img/sales-funnel-done.PNG)
 
 Add the following elements to the dashboard:
 
