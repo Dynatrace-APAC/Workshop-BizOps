@@ -19,6 +19,7 @@ In this lab, we will mark user actions as key user actions.
 Repeat the above to add the following as key user actions:
 
 - loading of page /
+- loading of page /orange.jsf
 - loading of page /orange-booking-finish.jsf
 - loading of page /orange-booking-review.jsf
 - loading of page /orange-booking-payment.jsf

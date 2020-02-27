@@ -1,6 +1,6 @@
 {
   "name": "easyTravel Booking",
-  "frequencyMin": 15,
+  "frequencyMin": 5,
   "enabled": true,
   "type": "BROWSER",
   "createdFrom": "API",
