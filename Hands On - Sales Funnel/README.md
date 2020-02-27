@@ -71,58 +71,30 @@ USQL Tiles:
 	- Compare with previous timeframe: **true**
 	- Dynamic time-frame shift: **true**
 	- Visualization types: **Pie chart**
+
+- Revenue by User Experience:
+	- USQL Category: **SELECT userExperienceScore, sum(usersession.doubleProperties.bookingtotal) FROM usersession where useraction.application="easyTravel Website"  and (useraction.name="loading of page /" OR useraction.name="loading of page /special-offers.jsp")  and (useraction.name="loading of page /orange-booking-finish.jsf") group by userExperienceScore order by sum(usersession.doubleProperties.bookingtotal) desc**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Table only**
+
+- Lost Revenue by User Experience:
+	- USQL Category: **SELECT userExperienceScore, sum(usersession.doubleProperties.bookingtotal) FROM usersession where useraction.application="easyTravel Website"  and (useraction.name="loading of page /" OR useraction.name="loading of page /special-offers.jsp")  and not (useraction.name="loading of page /orange-booking-finish.jsf") group by userExperienceScore order by sum(usersession.doubleProperties.bookingtotal) desc**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Pie chart**
+
+- Conversions by User Experience:
+	- USQL Category: **SELECT userExperienceScore, count(userSessionId) FROM usersession where useraction.application="easyTravel Website"  and (useraction.name="loading of page /orange-booking-finish.jsf") group by userExperienceScore order by count(userSessionId) desc**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Pie chart**
 	
-Homepage  
-    Conversion Goal > easyTravel > Homepage
-    
-Review  
-    Conversion Goal > easyTravel > Review
-      
-Payment  
-    Conversion Goal > easyTravel > Payment
-    
-Finish  
-    Conversion Goal > easyTravel > Sucessful Bookings - open Final Page
-    
-### Abandons
-
-Homepage - USQL
-
-    select count(*) as "Abandons" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name!="Loading of page /orange-booking-review.jsf"  
-    
-Review - USQL
-      
-    select count(*) as "Abandons" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name!="Loading of page /orange-booking-payment.jsf"  
-      
-Payment - USQL
-    
-    select count(*) as "Abandons" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name="Loading of page /orange-booking-payment.jsf" and useraction.name!="Loading of page /orange-booking-finish.jsf"  
-
-Finish - USQL
-     
-    select count(*) as "Abandons" from usersession where useraction.name="Loading of page /orange.jsf " and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name="Loading of page /orange-booking-payment.jsf" and useraction.name="Loading of page /orange-booking-finish.jsf"
-
-### Errors
-
-Homepage - USQL
-      
-     select sum(errorCount) as "Errors" from useraction where name="Loading of page /orange.jsf"
-    
-Review - USQL
-     
-     select sum(errorCount) as "Errors" from useraction where name="Loading of page /orange-booking-review.jsf"
-      
-Payment - USQL
-     
-     select sum(errorCount) as "Errors" from useraction where name="Loading of page /orange-booking-payment.jsf"
-
-Finish - USQL
-     
-     select sum(errorCount) as "Errors" from useraction where name="Loading of page /orange-booking-finish.jsf"
-
-      
-When you are finished your dashboard should look something like this:
-
-![Dashboard Basic Funnel](/img/usql-basic-funnel.PNG)
+	
+- Abandons by User Experience:
+	- USQL Category: **SELECT userExperienceScore, count(userSessionId) FROM usersession where useraction.application="easyTravel Website"  and (useraction.name="loading of page /" OR useraction.name="loading of page /special-offers.jsp")  and not (useraction.name="loading of page /orange-booking-finish.jsf") group by userExperienceScore order by count(userSessionId) desc**
+	- Compare with previous timeframe: **true**
+	- Dynamic time-frame shift: **true**
+	- Visualization types: **Pie chart**
 
 :arrow_up_small: [Back to overview](/README.md)
