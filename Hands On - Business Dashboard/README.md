@@ -16,7 +16,7 @@ The above dashboard has the following components:
 
 4) **Bounce Rate** > **easyTravel Website**
 
-5) **Key user actions** > **easyTravel**
+5) **Key user actions** > **easyTravel Website**
 
 6) **User Session Query** - Revenue
 
