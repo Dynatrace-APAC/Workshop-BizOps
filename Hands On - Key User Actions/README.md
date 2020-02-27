@@ -23,7 +23,9 @@ Repeat the above to add the following as key user actions:
 - loading of page /orange-booking-finish.jsf
 - loading of page /orange-booking-review.jsf
 - loading of page /orange-booking-payment.jsf
+- click on "login" on page /orange.jsf
 - click on "login" on page /
+- click on "search" on page /orange.jsf
 - click on "search" on page /
 - loading of page /special-offers.jsp
 
