@@ -41,7 +41,7 @@ Second create the session property in Dynatrace.
    * Store as user action property: **false**  
    * Store as session property: **true**  
    * Apply cleanup rule: **true**  
-   * Cleanup Rule Regex: **\$(.*+)**
+   * Cleanup Rule Regex: '\$(.*+)'
    
 You can view the user sessions that have the booking total value by running the following USQL: 
 
