@@ -68,7 +68,7 @@ Create the session property in Dynatrace.
    * Data Type: **String**  
    * Display Name: **Journey**
    * Key:  **journey**  
-   * CSS Selector:  **The CSS Selector you copied above** e.g. #iceform\:popupDetailsLink
+   * CSS Selector:  **The CSS Selector you copied above** e.g. `#iceform\:popupDetailsLink`
    * Store as user action property: **false**  
    * Store as session property: **true**  
    * Apply cleanup rule: **false**  
