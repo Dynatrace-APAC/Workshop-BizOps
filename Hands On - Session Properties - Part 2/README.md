@@ -36,7 +36,7 @@ Second create the session property in Dynatrace.
    * Data Type: **Double**  
    * Display Name:  **Booking Total**  
    * Key:  **bookingtotal**  
-   * CSS Selector:  **The CSS Selector you copied above**  e.g **#iceform\:j_idt77-11-1 > span**
+   * CSS Selector:  **The CSS Selector you copied above**  e.g '#iceform\:j_idt77-11-1 > span'
    * Display Name: **Booking Total**  
    * Store as user action property: **false**  
    * Store as session property: **true**  
