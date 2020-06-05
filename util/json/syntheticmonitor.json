@@ -17,7 +17,7 @@
       {
         "type": "navigate",
         "description": "Loading of /orange.jsf",
-        "url": "http://PUBLIC_HOSTNAME/",
+        "url": "http://PUBLIC_HOSTNAME:8079/",
         "wait": {
           "waitFor": "page_complete"
         }
