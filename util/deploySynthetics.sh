@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #assume tenant and passtoken have already been set
-export TENANT=$TENANT
-export APITOKEN=$APITOKEN
+#export TENANT=$TENANT
+#export APITOKEN=$APITOKEN
 
 echo "Deploying Dynatrace Sythetics using the following credentials: "
 echo "APITOKEN = $APITOKEN"
@@ -21,7 +21,7 @@ deploySyntheticConfig()
 	
 	sed -i 's/PUBLIC_HOSTNAME/'$PUBLIC_HOSTNAME'/' json/syntheticmonitor.json
 	
-	curl -sX POST "https://"$TENANT".live.dynatrace.com/api/v1/synthetic/monitors/" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$APITOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/syntheticmonitor.json
+	curl -sX POST $TENANT"/api/v1/synthetic/monitors/" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$APITOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/syntheticmonitor.json
 
 	echo "Sythetic monitor created."
 	
