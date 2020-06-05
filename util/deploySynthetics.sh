@@ -2,7 +2,7 @@
 
 #assume tenant and passtoken have already been set
 export TENANT=$TENANT
-export PAASTOKEN=$APITOKEN
+export APITOKEN=$APITOKEN
 
 echo "Deploying Dynatrace Sythetics using the following credentials: "
 echo "APITOKEN = $APITOKEN"
