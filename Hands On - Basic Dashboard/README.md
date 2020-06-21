@@ -56,6 +56,9 @@ Custom Chart Tiles:
 	- Category: Applications
 	- Metric: Session Duration
 	- View Results as: Top List
-	- Filtered by: Application: **easyTravel Website**
+		- Dimensions to split by: 
+		- Web Application: true, Filtered by **easyTravel Website**
+		- Users: true
+		- User type: true
 
 :arrow_up_small: [Back to overview](/README.md)
