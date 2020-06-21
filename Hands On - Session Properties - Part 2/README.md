@@ -30,13 +30,16 @@ Second create the session property in Dynatrace.
 1) Access the easyTravel application monitoring settings
   Applications > easyTravel > (...) Edit
 
-2) Select **Session and User action properties** and click **Add property** and enter the following:
+2) Select **Session and User action properties** and click **Custom defined property** and enter the following:
 
    * Expression Type: **CSS Selector**  
    * Data Type: **Double**  
+   
+   * CSS Selector:  **The CSS Selector you copied above**  e.g `#iceform\:j_idt77-11-1 > span`
+   
    * Display Name:  **Booking Total**  
    * Key:  **bookingtotal**  
-   * CSS Selector:  **The CSS Selector you copied above**  e.g `#iceform\:j_idt77-11-1 > span`
+   
    * Display Name: **Booking Total**  
    * Store as user action property: **false**  
    * Store as session property: **true**  
