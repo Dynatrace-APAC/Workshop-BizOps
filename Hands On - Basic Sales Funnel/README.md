@@ -1,4 +1,4 @@
-# Hands On 1 - Basic Funnel Dashboard
+# Hands On - (Very) Basic Funnel Dashboard
 
 In this lab, we will create a dashboard to display a basic sales funnel.
 
@@ -10,7 +10,7 @@ In the Dynatrace UI, create a new dashboard named "Sales Funnel" (**Dashboards**
 
 2. Enter the UQSL as follows
 
-**select count(*) as "Homepage Requests" from usersession where useraction.name = "Loading of page /orange.jsf"**
+**select count(*) as "Homepage Requests" from usersession where useraction.name = "loading of page /orange.jsf"**
 
 ![USQL](/img/usql-query.PNG)
 
@@ -20,15 +20,15 @@ In the Dynatrace UI, create a new dashboard named "Sales Funnel" (**Dashboards**
 
   Review Page:
   
-    select count(*) as "Review Page Requests" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf"
+    select count(*) as "Review Page Requests" from usersession where useraction.name="loading of page /orange.jsf" and useraction.name="loading of page /orange-booking-review.jsf"
 
   Payment Page:
   
-    select count(*) as "Payment Page Requests" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name="Loading of page /orange-booking-payment.jsf"
+    select count(*) as "Payment Page Requests" from usersession where useraction.name="loading of page /orange.jsf" and useraction.name="loading of page /orange-booking-review.jsf" and useraction.name="loading of page /orange-booking-payment.jsf"
 
   Finish Page:
   
-    select count(*) as "Finish Page Requests" from usersession where useraction.name="Loading of page /orange.jsf" and useraction.name="Loading of page /orange-booking-review.jsf" and useraction.name="Loading of page /orange-booking-payment.jsf" and useraction.name="Loading of page /orange-booking-finish.jsf"
+    select count(*) as "Finish Page Requests" from usersession where useraction.name="loading of page /orange.jsf" and useraction.name="loading of page /orange-booking-review.jsf" and useraction.name="loading of page /orange-booking-payment.jsf" and useraction.name="loading of page /orange-booking-finish.jsf"
 
 When you are finished your dashboard should look something like this:
 
