@@ -1,0 +1,408 @@
+{
+    "dashboardMetadata": {
+        "name": "Hands On - Basic Dashboard",
+        "shared": false,
+        "owner": "kevin.leng@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Application health",
+        "tileType": "APPLICATIONS",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "chartVisible": true
+    }, {
+        "name": "Top web applications",
+        "tileType": "APPLICATIONS_MOST_ACTIVE",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Web application",
+        "tileType": "APPLICATION",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["APPLICATION-534A6A58D004195A"]
+    }, {
+        "name": "Overview",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 342,
+            "width": 1140,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Action count (by Apdex category)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "1",
+                        "name": "Apdex category",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779953486,
+                        "customColor": "#ff0000"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779943861,
+                        "customColor": "#ffff00"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»UNKNOWN»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779978173,
+                        "customColor": "#808080"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779934662,
+                        "customColor": "#00ff00"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-534A6A58D004195A"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 342,
+            "width": 570,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Action count (by Apdex category)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "PIE",
+                "series": [{
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "1",
+                        "name": "Apdex category",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779953486,
+                        "customColor": "#ff0000"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779943861,
+                        "customColor": "#ffff00"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»UNKNOWN»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779978173,
+                        "customColor": "#808080"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779934662,
+                        "customColor": "#00ff00"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-534A6A58D004195A"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 912,
+            "width": 570,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Real User Errors",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "PIE",
+                "series": [{
+                    "metric": "builtin:apps.web.countOfErrors",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "1",
+                        "name": "User type",
+                        "values": ["Real users"],
+                        "entityDimension": false
+                    }, {
+                        "id": "3",
+                        "name": "Error origin",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779953486,
+                        "customColor": "#ff0000"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779943861,
+                        "customColor": "#ffff00"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»UNKNOWN»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779978173,
+                        "customColor": "#808080"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779934662,
+                        "customColor": "#00ff00"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-534A6A58D004195A"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 342,
+            "width": 570,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Active sessions",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:apps.web.activeSessions",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "1",
+                        "name": "Users",
+                        "values": [],
+                        "entityDimension": false
+                    }, {
+                        "id": "2",
+                        "name": "User type",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»New users»false¦User type»Robots»falsebuiltin:apps.web.activeSessions|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592780531801,
+                        "customColor": "#ffa86c"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»New users»false¦User type»Synthetic»falsebuiltin:apps.web.activeSessions|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592780528424,
+                        "customColor": "#4fd5e0"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»New users»false¦User type»Real users»falsebuiltin:apps.web.activeSessions|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592780525047,
+                        "customColor": "#008cdb"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779953486,
+                        "customColor": "#ff0000"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779943861,
+                        "customColor": "#ffff00"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»UNKNOWN»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779978173,
+                        "customColor": "#808080"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592779934662,
+                        "customColor": "#00ff00"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»Returning users»false¦User type»Real users»falsebuiltin:apps.web.activeSessions|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592780519417,
+                        "customColor": "#7c38a1"
+                    }
+                },
+                "leftAxisCustomUnit": "Count"
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-534A6A58D004195A"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 912,
+            "width": 570,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Session duration",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:apps.web.sessionDuration",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "1",
+                        "name": "Users",
+                        "values": [],
+                        "entityDimension": false
+                    }, {
+                        "id": "2",
+                        "name": "User type",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»Returning users»false¦User type»Real users»falsebuiltin:apps.web.sessionDuration|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592781055688,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»New users»false¦User type»Robots»falsebuiltin:apps.web.sessionDuration|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592781068177,
+                        "customColor": "#ffa86c"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»New users»false¦User type»Real users»falsebuiltin:apps.web.sessionDuration|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592781062890,
+                        "customColor": "#008cdb"
+                    },
+                    "APPLICATION-534A6A58D004195A¦APPLICATION»APPLICATION-534A6A58D004195A»true¦Users»New users»false¦User type»Synthetic»falsebuiltin:apps.web.sessionDuration|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1592781047818,
+                        "customColor": "#00a1b2"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-534A6A58D004195A"]
+                }
+            }
+        }
+    }]
+}

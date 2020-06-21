@@ -8,7 +8,7 @@ In this lab, we will create a session properties to expose business data to Dyna
 
 Applications > easyTravel Website > (...) Edit
 
-2) Select **Session and User action properties** and click **Add property** and enter the following:
+2) Select **Session and User action properties**, and click **Custom defined property** and enter the following:
 
    * Expression Type: **CSS Selector**  
    * Data Type: **String**  
