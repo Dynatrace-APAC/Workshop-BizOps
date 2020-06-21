@@ -20,26 +20,37 @@ Custom Chart Tiles:
 	- Category: Applications
 	- Metric: Action count (by Apdex category) (Sum)
 	- View Results as: Timeseries
-	- Filtered by: Application: **easyTravel Website**
+	- Dimensions to split by: 
+		- Web Application: true, Filtered by **easyTravel Website**
+		- Apdex category: true
+		
 
 - Action count (by Apdex category)
 	- Category: Applications
 	- Metric: Action count (by Apdex category) (Sum)
 	- View Results as: Pie
-	- Filtered by: Application: **easyTravel Website**
+	- Dimensions to split by: 
+		- Web Application: true, Filtered by **easyTravel Website**
+		- Apdex category: true
 
 - Real User Errors
 	- Category: Applications
 	- Metric: Count of errors (by user type, error type and error origin) (Sum)
 	- View Results as: Pie
-	- User type: Filtered by: **Real Users**
-	- Filtered by: Application: **easyTravel Website**
+	- Dimensions to split by: 
+		- Web Application: true, Filtered by **easyTravel Website**
+		- User type: true, Filtered by: **Real Users**
+		- Error origin: true
 	
 - Active Sessions
 	- Category: Applications
 	- Metric: Active Sessions
 	- View Results as: Top List
-	- Filtered by: Application: **easyTravel Website**
+	- Dimensions to split by: 
+		- Web Application: true, Filtered by **easyTravel Website**
+		- Users: true
+		- User type: true
+		
 	
 - Session Duration
 	- Category: Applications
