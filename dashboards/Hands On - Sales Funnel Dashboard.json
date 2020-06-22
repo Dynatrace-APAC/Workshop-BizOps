@@ -1,11 +1,10 @@
 {
     "dashboardMetadata": {
         "name": "Hands On - Sales Funnel Dashboard",
-        "shared": false,
-        "owner": "kevin.leng@dynatrace.com",
+        "shared": true,
         "sharingDetails": {
             "linkShared": true,
-            "published": false
+            "published": true
         },
         "dashboardFilter": {
             "timeframe": ""

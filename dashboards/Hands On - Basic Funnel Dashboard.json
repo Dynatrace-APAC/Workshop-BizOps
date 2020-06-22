@@ -1,32 +1,16 @@
 {
     "dashboardMetadata": {
         "name": "Hands On - Basic Funnel Dashboard",
-        "shared": false,
-        "owner": "kevin.leng@dynatrace.com",
+        "shared": true,
         "sharingDetails": {
             "linkShared": true,
-            "published": false
+            "published": true
         },
         "dashboardFilter": {
             "timeframe": ""
         }
     },
     "tiles": [{
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 266,
-            "width": 304,
-            "height": 152
-        },
-        "tileFilter": {},
-        "customName": "Homepage",
-        "query": "select count(*) as \"Homepage Requests\" from usersession where useraction.name = \"loading of page /orange.jsf\"",
-        "type": "SINGLE_VALUE",
-        "limit": 50
-    }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
         "configured": true,
@@ -44,13 +28,13 @@
         "configured": true,
         "bounds": {
             "top": 38,
-            "left": 570,
+            "left": 874,
             "width": 304,
             "height": 152
         },
         "tileFilter": {},
-        "customName": "Review",
-        "query": "select count(*) as \"Review Page Requests\" from usersession where useraction.name=\"loading of page /orange.jsf\" and useraction.name=\"loading of page /orange-booking-review.jsf\"\n",
+        "customName": "Payment",
+        "query": "select count(*) as \"Payment Page Requests\" from usersession where (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\") and useraction.name=\"loading of page /orange-booking-review.jsf\" and useraction.name=\"loading of page /orange-booking-payment.jsf\"\n",
         "type": "SINGLE_VALUE",
         "limit": 50
     }, {
@@ -59,13 +43,28 @@
         "configured": true,
         "bounds": {
             "top": 38,
-            "left": 874,
+            "left": 266,
             "width": 304,
             "height": 152
         },
         "tileFilter": {},
-        "customName": "Payment",
-        "query": "select count(*) as \"Payment Page Requests\" from usersession where useraction.name=\"loading of page /orange.jsf\" and useraction.name=\"loading of page /orange-booking-review.jsf\" and useraction.name=\"loading of page /orange-booking-payment.jsf\"\n",
+        "customName": "Homepage",
+        "query": "select count(*) as \"Homepage Requests\" from usersession where (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\")",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 570,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Review",
+        "query": "select count(*) as \"Review Page Requests\" from usersession where (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\") and useraction.name=\"loading of page /orange-booking-review.jsf\"\n",
         "type": "SINGLE_VALUE",
         "limit": 50
     }, {
@@ -80,7 +79,7 @@
         },
         "tileFilter": {},
         "customName": "Finish",
-        "query": "select count(*) as \"Finish Page Requests\" from usersession where useraction.name=\"loading of page /orange.jsf\" and useraction.name=\"loading of page /orange-booking-review.jsf\" and useraction.name=\"loading of page /orange-booking-payment.jsf\" and useraction.name=\"loading of page /orange-booking-finish.jsf\"\n",
+        "query": "select count(*) as \"Finish Page Requests\" from usersession where (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\") and useraction.name=\"loading of page /orange-booking-review.jsf\" and useraction.name=\"loading of page /orange-booking-payment.jsf\" and useraction.name=\"loading of page /orange-booking-finish.jsf\"\n",
         "type": "SINGLE_VALUE",
         "limit": 50
     }]
