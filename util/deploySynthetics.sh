@@ -23,6 +23,11 @@ deploySyntheticConfig()
 	
 	curl -sX POST $TENANT"/api/v1/synthetic/monitors/" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$APITOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/syntheticmonitor.json
 
+	sed -i 's/PUBLIC_HOSTNAME/'$PUBLIC_HOSTNAME'/' json/syntheticmonitorprivate.json
+	
+	curl -sX POST $TENANT"/api/v1/synthetic/monitors/" -H "accept: application/json; charset=utf-8" -H "Authorization: Api-Token "$APITOKEN -H "Content-Type: application/json; charset=utf-8" -d @json/syntheticmonitorprivate.json
+
+
 	echo "Sythetic monitor created."
 	
 }
