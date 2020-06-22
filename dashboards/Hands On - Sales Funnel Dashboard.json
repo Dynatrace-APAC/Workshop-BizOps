@@ -1,0 +1,229 @@
+{
+    "dashboardMetadata": {
+        "name": "Hands On - Sales Funnel Dashboard",
+        "shared": false,
+        "owner": "kevin.leng@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Book Travel Overview",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 1216,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Sessions",
+        "query": "select count(userSessionId) as \"Sessions\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 304,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Revenue",
+        "query": " select sum(usersession.doubleProperties.bookingtotal) as \"Revenue\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 608,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Conversions",
+        "query": "SELECT count(userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and (useraction.name=\"loading of page /orange-booking-finish.jsf\")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 912,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Lost Revenue",
+        "query": "select sum(usersession.doubleProperties.bookingtotal) as \"Lost Revenue\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and not (useraction.name=\"loading of page /orange-booking-finish.jsf\")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 912,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Risk Revenue",
+        "query": "select sum(usersession.doubleProperties.bookingtotal) as \"Risk Revenue\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and (userExperienceScore =\"TOLERATED\" or userExperienceScore =\"FRUSTRATED\" or userExperienceScore =\"UNDEFINED\")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 608,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Abandons",
+        "query": "SELECT count(userSessionId) as \"Abandons\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and not (useraction.name=\"loading of page /orange-booking-finish.jsf\")",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 0,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "New User Revenue",
+        "query": "select sum(usersession.doubleProperties.bookingtotal) as \"New User Revenue\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and newUser IS true",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 304,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Returning User Revenue",
+        "query": "select sum(usersession.doubleProperties.bookingtotal) as \"Returning User Revenue\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and (useraction.name=\"loading of page /orange-booking-finish.jsf\") and newUser IS false",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 1216,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Book Travel User Journey",
+        "query": "SELECT FUNNEL((useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") AS \"Homepage\", (useraction.name=\"click on \"\"login\"\" on page /orange.jsf\" or useraction.name=\"click on \"\"login\"\" on page /\") AS \"Login\", (useraction.name=\"click on \"\"search\"\" on page /orange.jsf\" or useraction.name=\"click on \"\"search\"\" on page /\") AS \"Search\", (useraction.name=\"loading of page /orange-booking-finish.jsf\") AS \"Booking\") FROM usersession where useraction.application=\"easyTravel Website\"",
+        "type": "FUNNEL",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 342,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Revenue by User Experience",
+        "query": "SELECT userExperienceScore, sum(usersession.doubleProperties.bookingtotal) FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and (useraction.name=\"loading of page /orange-booking-finish.jsf\") group by userExperienceScore order by sum(usersession.doubleProperties.bookingtotal) desc",
+        "type": "PIE_CHART",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 342,
+            "width": 266,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Revenue by User Experience",
+        "query": "SELECT userExperienceScore as \"APDEX\", sum(usersession.doubleProperties.bookingtotal) as \"Revenue\" FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\") and (useraction.name=\"loading of page /orange-booking-finish.jsf\") group by userExperienceScore order by sum(usersession.doubleProperties.bookingtotal) desc",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 608,
+            "width": 266,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Lost Revenue by User Experience",
+        "query": "SELECT userExperienceScore as \"APDEX\", sum(usersession.doubleProperties.bookingtotal) as \"Revenue\"  FROM usersession where useraction.application=\"easyTravel Website\"  and (useraction.name=\"loading of page /orange.jsf\" or useraction.name=\"loading of page /\" OR useraction.name=\"loading of page /special-offers.jsp\")  and not (useraction.name=\"loading of page /orange-booking-finish.jsf\") group by userExperienceScore order by sum(usersession.doubleProperties.bookingtotal) desc",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 874,
+            "width": 342,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Conversions by User Experience",
+        "query": "SELECT userExperienceScore, count(userSessionId) FROM usersession where useraction.application=\"easyTravel Website\" and (useraction.name=\"loading of page /orange-booking-finish.jsf\") group by userExperienceScore order by count(userSessionId) desc",
+        "type": "PIE_CHART",
+        "limit": 50
+    }]
+}

@@ -1,0 +1,210 @@
+{
+    "dashboardMetadata": {
+        "name": "Hands On - Basic USQL Dashboard",
+        "shared": false,
+        "owner": "kevin.leng@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Tenant Overview",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Live user activity",
+        "tileType": "UEM_ACTIVE_SESSIONS",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Top web applications",
+        "tileType": "APPLICATIONS_MOST_ACTIVE",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Application health",
+        "tileType": "APPLICATIONS",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 608,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "chartVisible": true
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 912,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Duration 90th Percentile",
+        "query": "select PERCENTILE(duration,90) as \"Duration 90th Percentile\" from useraction",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 1216,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Visually Complete 90th Percentile",
+        "query": "select PERCENTILE(visuallyCompleteTime,90) as \"Visually Complete 90th Percentile\" from useraction",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 1520,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Speed Index 90th Percentile",
+        "query": "select PERCENTILE(speedIndex,90) as \"Speed Index 90th Percentile\" from useraction",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 912,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Satisfied Users",
+        "query": "select count(usersessionid) as \"Satisfied Users\" from usersession where userExperienceScore=\"SATISFIED\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1216,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Tolerated Users",
+        "query": "select count(usersessionid) as \"Tolerated Users\" from usersession where userExperienceScore=\"TOLERATED\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1520,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Frustrated Users",
+        "query": "select count(usersessionid) as \"Frustrated Users\" from usersession where userExperienceScore=\"FRUSTRATED\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 608,
+            "height": 456
+        },
+        "tileFilter": {},
+        "customName": "Duration",
+        "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", avg(useraction.duration) as \"Duration\" from useraction",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": false
+        },
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 608,
+            "width": 608,
+            "height": 456
+        },
+        "tileFilter": {},
+        "customName": "Visually Complete",
+        "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", AVG(visuallyCompleteTime) as \"Visually Complete\" from useraction",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": false
+        },
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 1216,
+            "width": 608,
+            "height": 456
+        },
+        "tileFilter": {},
+        "customName": "Speed Index",
+        "query": " select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", AVG(speedIndex) as \"Speed Index\" from useraction",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": false
+        },
+        "limit": 50
+    }]
+}
