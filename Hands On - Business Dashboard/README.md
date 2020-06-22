@@ -40,7 +40,7 @@ The above dashboard has the following components:
 
 11) **User Session Query** - Revenue by Loyalty Users
 
-        SSELECT userId AS "Customer", country AS "Origin Country", stringProperties.membershipstatus AS "Loyalty Status", SUM(doubleProperties.bookingtotal) AS "Revenue", AVG(doubleProperties.bookingtotal) AS "Average Trip Spend" FROM usersession WHERE useraction.application="easyTravel Website" and (useraction.name="loading of page /orange-booking-finish.jsf") and doubleProperties.bookingtotal IS NOT NULL AND CITY IS NOT NULL AND userId IS NOT NULL AND stringProperties.membershipstatus  IN ("Gold", "Platinum", "Silver") GROUP BY userId, country, stringProperties.membershipstatus ORDER BY sum(doubleProperties.bookingtotal) DESC
+        SELECT userId AS "Customer", country AS "Origin Country", stringProperties.membershipstatus AS "Loyalty Status", SUM(doubleProperties.bookingtotal) AS "Revenue", AVG(doubleProperties.bookingtotal) AS "Average Trip Spend" FROM usersession WHERE useraction.application="easyTravel Website" and (useraction.name="loading of page /orange-booking-finish.jsf") and doubleProperties.bookingtotal IS NOT NULL AND CITY IS NOT NULL AND userId IS NOT NULL AND stringProperties.membershipstatus  IN ("Gold", "Platinum", "Silver") GROUP BY userId, country, stringProperties.membershipstatus ORDER BY sum(doubleProperties.bookingtotal) DESC
        
 12) **User Session Query** - Revenue by Purchasing City
 
