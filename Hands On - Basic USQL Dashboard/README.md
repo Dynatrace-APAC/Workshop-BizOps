@@ -16,6 +16,8 @@ Out of the Box Tiles:
 
 USQL Tiles:
 
+### Single Value Tiles
+
 - Satisfied Users
 	- USQL Category: **select count(usersessionid) as "Satisfied Users" from usersession where userExperienceScore="SATISFIED"**
 	- Compare with previous timeframe: **true**
@@ -51,6 +53,8 @@ USQL Tiles:
 	- Compare with previous timeframe: **true**
 	- Dynamic time-frame shift: **true**
 	- Visualization types: **Single value**
+
+### Charts
 	
 - Duration
 	- USQL Category: **select DISTINCT DATETIME(starttime, "HH:mm", "10m") as "Time", avg(useraction.duration) as "Duration" from useraction**

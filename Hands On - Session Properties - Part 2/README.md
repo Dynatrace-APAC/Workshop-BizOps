@@ -65,13 +65,16 @@ For the trip Journey, back in easyTravel:
 
 Create the session property in Dynatrace.
 
-1) Select **Session and User action properties** and click **Add property** and enter the following:
+1) Select **Session and User action properties** and click **Custom defined property** and enter the following:
 
    * Expression Type: **CSS Selector**  
    * Data Type: **String**  
+   
+   * CSS Selector:  **The CSS Selector you copied above** e.g. `#iceform\:popupDetailsLink`
+   
    * Display Name: **Journey**
    * Key:  **journey**  
-   * CSS Selector:  **The CSS Selector you copied above** e.g. `#iceform\:popupDetailsLink`
+   
    * Store as user action property: **false**  
    * Store as session property: **true**  
    * Apply cleanup rule: **false**  
